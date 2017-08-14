@@ -6,16 +6,11 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles={
-'article-One': {
-   
+    'article-one': {
        tilte: 'Article One ! Abdul Kareem',
-       
        heading:'Article One',
-        
-        date:'Aug 13 ,2016',
-         
-        content:`
-                    <p>
+       date:'Aug 13 ,2016',
+       content:`    <p>
                         This is the content for my first article. This is the content for my first article. This is the content for my first article. 
                         This is the content for my first article. This is the content for my first article. This is the content for my first article. 
                     </p>
@@ -30,13 +25,10 @@ var articles={
                `
     
             },
-                 
-         'article-Two':{ tilte: 'Article One ! Abdul Kareem',
-       
-       heading:'Article One',
-        
+    'article-two':{ 
+        tilte: 'Article One ! Abdul Kareem',
+        heading:'Article One',
         date:'Aug 23 ,2016',
-         
         content:`
                     <p>
                         This is the content for my first article. This is the content for my first article. This is the content for my first article. 
@@ -51,16 +43,12 @@ var articles={
                         This is the content for my first article. This is the content for my first article. This is the content for my first article. 
                     </p>
                `
-    
             },
-        'article-Three':{tilte: 'Article One ! Abdul Kareem',
-       
-       heading:'Article One',
-        
+    'article-three':{
+        tilte: 'Article One ! Abdul Kareem',
+        heading:'Article One',
         date:'Aug 10 ,2016',
-         
-        content:`
-                    <p>
+        content:` <p>
                         This is the content for my first article. This is the content for my first article. This is the content for my first article. 
                         This is the content for my first article. This is the content for my first article. This is the content for my first article. 
                     </p>
@@ -118,8 +106,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName', function (req, res) {
-    
-    articleName =req.params.articleName;
+articleName =req.params.articleName;
   res.send(createTemplate(articles[articleName]));
 });
 
